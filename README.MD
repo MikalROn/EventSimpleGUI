@@ -2,18 +2,16 @@
 
 > Status of project: in progress...
 
-This project has the intention to make more easy, scalable
-and readable events on PySimpleGUI.
+This project has the intention to make easier, scalable and readable events on PySimpleGUI
 ## Download
 ````shell
-$pip install pysg-events
+$pip install EventSimpleGUI
 ````
 ## Demonstration
 
 <h3> Creating an event function </h3>
 
-Using the decor event to run an event, you can pass the element key
-as an argument for decorator, when's the event was called, function will be called two.
+Using the decorator event to run an event, you can pass the element key as an argument for decorator, when the event is called, function is going to be called two
 
 ````python
 from pysimpleevent import EventSimpleGUI
