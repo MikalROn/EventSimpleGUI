@@ -61,6 +61,7 @@ class EventSimpleGUI:
         # Return values of window.read()
         if return_values:
             return values
+        Window.close()
 
 
     def event(self, key: str):
