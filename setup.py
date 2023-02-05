@@ -77,7 +77,7 @@ if __name__ == '__main__':
 keywords = ['EventSimpleGUI']
 
 setup(name='EventSimpleGUI',
-      version='0.1.7',
+      version='0.1.8',
       license='MIT license',
       author='Daniel Coêlho',
       long_description=readme,
