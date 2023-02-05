@@ -18,7 +18,7 @@ class EventSimpleGUI:
         """ You can use this method, but it's recomended to use @EventSimpleGUI.event"""
         self._events.append(event)
 
-    def run_window(self, Window: sg.Window, *args, debug=False, close_event=False,return_values=True, task=None):
+    def run_window(self, Window: sg.Window, *args, debug=False, close_event=False, return_values=True, task=None):
         """ Use this method to run PySimpleGUI Windows
         :param Window:         can be any PySimpleGUI Window
         :type Window:          PySimpleGUI.Window
