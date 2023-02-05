@@ -40,11 +40,7 @@ class EventSimpleGUI:
                 task()
 
             # Close window
-            if event == sg.WIN_CLOSED:
-                break
-
-            # Custom close window
-            if close_event:
+            if event == sg.WIN_CLOSED or event == close_event:
                 break
 
             # return window on the values
