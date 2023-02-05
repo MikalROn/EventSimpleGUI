@@ -18,7 +18,7 @@ class EventSimpleGUI:
         """ You can use this method, but it's recomended to use @EventSimpleGUI.event"""
         self._events.append(event)
 
-    def run_window(self, Window: sg.Window, *args, debug=False, return_values=True, task=None):
+    def run_window(self, Window: sg.Window, *args, debug=False, close_event=False,return_values=True, task=None):
         """ Use this method to run PySimpleGUI Windows
         :param Window:         can be any PySimpleGUI Window
         :type Window:          PySimpleGUI.Window
@@ -29,17 +29,22 @@ class EventSimpleGUI:
         :param return_values:  if True return values of window.read()
         :type return_values:   bool
         :param task:           can be any calable function
+        :param close_event:
         """
         while True:
 
             event, values = Window.Read()
 
             # Run task
-            if task != None:
+            if task:
                 task()
 
             # Close window
             if event == sg.WIN_CLOSED:
+                break
+
+            # Custom close window
+            if close_event:
                 break
 
             # return window on the values
