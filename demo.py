@@ -51,7 +51,7 @@ form = [
 ]
 
 layout = [
-    [sg.Frame('Cadastro ->', form,expand_x=True, expand_y=True)],
+    [sg.Frame('Cadastro ->', form, expand_x=True, expand_y=True)],
 ]
 
 window = sg.Window('Janela', layout, resizable=True, scaling=2)
