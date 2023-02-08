@@ -29,7 +29,7 @@ class EventSimpleGUI:
         :param return_values:  if True return values of window.read()
         :type return_values:   bool
         :param task:           can be any calable function
-        :param close_event:
+        :param close_event:    a diferent key to close the window
         """
         while True:
 
@@ -65,10 +65,10 @@ class EventSimpleGUI:
         Window.close()
 
 
-    def event(self, key: str):
+    def event(self, key: str or list[str]):
         """ Use this decorator to create events.
-        ::param key:     element key
-        ::type key:      str
+        ::param key:     element key or keys
+        ::type key:      str or list[str]
 
         Exemple of a simple event:
 
@@ -81,9 +81,13 @@ class EventSimpleGUI:
         """
         def decorador(func_event):
             def empacotador(event: str, values: dict, window: sg.Window):
-                if event == key:
-                    result = func_event(event, values, window)
-                    return result
+                if type(key) == list:
+                    if event in key:
+                        return func_event(event, values, window)
+
+                elif type(key) == str:
+                    if event == key:
+                        return func_event(event, values, window)
             self.add_event(empacotador)
             return empacotador
         return decorador
