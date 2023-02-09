@@ -1,4 +1,4 @@
-from demo1 import when_btn_was_clicked, window, app
+from demos.demo1 import when_btn_was_clicked, window
 from pysimpleevent import EventSimpleGUI
 
 

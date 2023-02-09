@@ -1,13 +1,13 @@
 from setuptools import setup
 import os
 
-with open('README.MD', 'rt') as arq:
+with open('README.md', 'rt') as arq:
       readme = arq.read()
 
-keywords = ['EventSimpleGUI']
+keywords = ['EventSimpleGUI', 'simplegui', 'GUI', 'gui', 'events for simplegui']
 
 setup(name='EventSimpleGUI',
-      version='0.1.9',
+      version='0.2.0',
       license='MIT license',
       author='Daniel Coêlho',
       long_description=readme,
