@@ -12,8 +12,6 @@ def get_cep_api(cep: str) -> dict:
         raise ValueError(r.status_code, r.text)
 
 
-
-
 app = EventSimpleGUI()
 
 lay = [
@@ -50,12 +48,6 @@ def event_buscar(event, values, window: sg.Window):
     dados = get_cep_api(Cep)
     for row in cria_lay_com_dicio(dados):
         window.extend_layout(info, [row])
-
-
-
-
-
-
 
 
 if __name__ == '__main__':
