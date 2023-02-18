@@ -4,7 +4,6 @@ import PySimpleGUI as sg
 app = EventSimpleGUI()
 
 
-
 def when_btn_was_clicked(event: str, values: dict, window: sg.Window):
     if event == '_click':
         print('Just a normal event')
