@@ -48,8 +48,8 @@ class EventSimpleGUI:
 
             # Run decorator events
             for func in self._events:
-                func_return = func(event, values, Window)
-                values[f'event_{func.__name__}'] = func_return
+                func(event, values, Window)
+
 
             # Run args events or functions
             for arg in args:
@@ -64,7 +64,6 @@ class EventSimpleGUI:
         if return_values:
             return values
         Window.close()
-
 
     def event(self, key: str or list[str]):
         """ Use this decorator to create events.
@@ -84,11 +83,13 @@ class EventSimpleGUI:
             def empacotador(event: str, values: dict, window: sg.Window):
                 if type(key) == list:
                     if event in key:
-                        return func_event(event, values, window)
+                        values[func_event.__name__] = func_event(event, values, window)
+                        return values[func_event.__name__]
 
                 elif type(key) == str:
                     if event == key:
-                        return func_event(event, values, window)
+                        values[func_event.__name__] = func_event( event, values, window )
+                        return values[func_event.__name__]
             self.add_event(empacotador)
             return empacotador
         return decorador

@@ -31,7 +31,6 @@ win = sg.Window('Info cep', lay)
 
 @app.event('Buscar')
 def event_buscar(event, values, window: sg.Window):
-
     def cria_lay_com_dicio(dicionario: dict) -> list:
         return [
             [
@@ -48,7 +47,9 @@ def event_buscar(event, values, window: sg.Window):
     dados = get_cep_api(Cep)
     for row in cria_lay_com_dicio(dados):
         window.extend_layout(info, [row])
+    return Cep
+
 
 
 if __name__ == '__main__':
-    app.run_window(win)
+    app.run_window(win, debug=True)
