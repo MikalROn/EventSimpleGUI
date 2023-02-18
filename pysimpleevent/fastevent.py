@@ -48,7 +48,8 @@ class EventSimpleGUI:
 
             # Run decorator events
             for func in self._events:
-                func(event, values, Window)
+                func_return = func(event, values, Window)
+                values[f'event_{func.__name__}'] = func_return
 
             # Run args events or functions
             for arg in args:
