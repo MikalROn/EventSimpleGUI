@@ -10,22 +10,24 @@ class EventSimpleGUI:
         self._events = []
 
     @property
-    def get_events(self):
+    def get_events(self) -> list:
         """ Use this property to get all events, from @event or add_event """
         return self._events
 
     def add_event(self, event):
-        """ You can use this method, but it's recomended to use @EventSimpleGUI.event"""
+        """ You can use this method, but it's recomended to use @EventSimpleGUI.event """
         self._events.append(event)
 
-    def run_window(self, Window: sg.Window, *args, debug=False, close_event=False, return_values=True, task=None):
+    def run_window(
+            self, Window: sg.Window, *args, window_log=False, close_event=False, return_values=True, task=None
+    ) -> dict or None:
         """ Use this method to run PySimpleGUI Windows
         :param Window:         can be any PySimpleGUI Window
         :type Window:          PySimpleGUI.Window
         :arg args:             can be any function that recives (event: str , values: dict, window: PySimpleGUI.Window)
         :type args:            function
-        :param debug:          if True prints events and values on the console
-        :type debug:           bool
+        :param window_log:     if True prints events and values on the console
+        :type window_log:      bool
         :param return_values:  if True return values of window.read()
         :type return_values:   bool
         :param task:           can be any calable function
@@ -56,9 +58,9 @@ class EventSimpleGUI:
                 arg(event, values, Window)
 
             # Activate debug
-            if debug:
-                print('Event -> ', event)
-                print('Values -> ', values)
+            if window_log:
+                print(f'{"Event ->":10}', event)
+                print(f'{"Values ->":10}', values)
 
         # Return values of window.read()
         if return_values:

@@ -11,7 +11,8 @@ $pip install EventSimpleGUI
 
 <h3> Creating an event function </h3>
 
-Using the decorator event to run an event, you can pass the element key as an argument for decorator, when the event is called, function is going to be called two
+<p>Using the decorator event to run an event, you can pass the element key as an argument for decorator, when the event 
+is called, function is going to be called two</p>
 
 ````python
 from pysimpleevent import EventSimpleGUI
@@ -21,7 +22,7 @@ loop = EventSimpleGUI()
 
 
 @loop.event('_click')
-def when_btn_was_clicked(event: str, values: dict, window: sg.Window):
+def when_btn_was_clicked(*args):
     print('Just a normal event')
 
 layout = [[sg.B('Just a button', key='_click')]]
@@ -39,7 +40,8 @@ loop = EventSimpleGUI()
 
 
 
-def when_btn_was_clicked(event: str, values: dict, window: sg.Window):
+def when_btn_was_clicked(*args):
+    event, _, _ = args
     if event == '_click':
         print('Just a normal event')
 
@@ -58,7 +60,8 @@ loop = EventSimpleGUI()
 
 
 
-def when_btn_was_clicked(event: str, values: dict, window: sg.Window):
+def when_btn_was_clicked(*args):
+    event, _, _ = args
     if event == '_click':
         print('Just a normal event')
 
@@ -69,4 +72,31 @@ window = sg.Window('Just a Window.', layout)
 if __name__ == '__main__':
     loop.run_window(window)
 ````
+
+## Events
+
+<p> You can use a sting or list of keys to trigger your events </p>
+
+````python
+from pysimpleevent import EventSimpleGUI
+import PySimpleGUI as sg
+
+
+loop = EventSimpleGUI()
+
+keys = ['_click', '_click1']
+@loop.event(keys)
+def when_btn_was_clicked(*args):
+    print('Just a normal event')
+
+
+layout = [
+    [sg.B(f'{"Just a button":54}', key='_click')],
+    [sg.B(f'{"Just another button":50}', key='_click1')]
+]
+window = sg.Window('Just a Window.', layout, scaling=1.5)
+if __name__ == '__main__':
+    loop.run_window(window, window_log=True)
+````
+
 

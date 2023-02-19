@@ -7,7 +7,8 @@ loop = EventSimpleGUI()
 
 
 @loop.event( '_NOME' )
-def verificar_nome(event, values, window):
+def verificar_nome(*args):
+    event, values, window = args
     element = window.find_element('_NOME_ERRO')
     if len(values[event]) > 20:
         element.update('limite 20 exedido!')
@@ -16,7 +17,8 @@ def verificar_nome(event, values, window):
 
 
 @loop.event( '_EMAIL' )
-def verifica_email(event: str, values, window: sg.Window):
+def verifica_email(*args):
+    event, values, window = args
     elememt = window.find_element('_EMAIL_ERRO')
     re_email = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
     if re.fullmatch(re_email, values[event]):
@@ -26,7 +28,8 @@ def verifica_email(event: str, values, window: sg.Window):
 
 
 @loop.event( '_SENHA' )
-def enviar_informacao(event, values, window):
+def enviar_informacao(*args):
+    event, values, window = args
     senha = values[event]
     element = window.find_element('_SENHA_ERRO')
     if 5 < len(senha) < 30:
@@ -57,4 +60,4 @@ layout = [
 window = sg.Window('Janela', layout, resizable=True, scaling=2)
 
 if __name__ == '__main__':
-    loop.run_window( window )
+    loop.run_window(window)
