@@ -24,6 +24,7 @@ setup(name='EventSimpleGUI',
       python_requires='>=3',
       project_urls={
             'Tests': 'https://smokeshow.helpmanual.io/474z2x1c0s2u3j101i26/',
-            'Source': 'https://github.com/MikalROn/EventSimpleGU'
+            'Source': 'https://github.com/MikalROn/EventSimpleGU',
+            'Demos': 'https://github.com/MikalROn/EventSimpleGUI/tree/main/demos'
       }
 )

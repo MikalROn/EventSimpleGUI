@@ -1,0 +1,7 @@
+site_name: EventSimpleGUI
+theme:
+    name: windmill-dark
+    locale: en
+    nav_style: dark
+
+
