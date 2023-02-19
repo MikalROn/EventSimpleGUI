@@ -4,10 +4,13 @@ import os
 with open('README.md', 'rt') as arq:
       readme = arq.read()
 
-keywords = ['EventSimpleGUI', 'simplegui', 'GUI', 'gui', 'events for simplegui', 'generate events', 'fast events', ]
+keywords = [
+      'EventSimpleGUI'.lower(), 'EventSimpleGUI', 'simplegui', 'GUI', 'gui', 'events for simplegui',
+      'generate events', 'fast events', 'events'
+]
 
 setup(name='EventSimpleGUI',
-      version='0.2.5',
+      version='0.2.7',
       license='MIT license',
       author='Daniel Coêlho',
       long_description=readme,

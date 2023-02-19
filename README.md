@@ -114,10 +114,18 @@ window = sg.Window('Just a Window.', layout, scaling=1.5)
 if __name__ == '__main__':
     loop.run_window(window, window_log=True)
 ````
+<div>
 
-###  Change log 0.2.5
+
+#### Change log 0.2.7
+
+- Tests are implemented 97% cov
+- Close event replaced to the end of loop
+
+####  Change log 0.2.5
 
 - Now events can return values on Values dict
 
+</div>
 
 

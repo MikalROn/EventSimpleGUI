@@ -5,6 +5,7 @@ import PySimpleGUI as sg
 loop = EventSimpleGUI()
 
 keys = ['_click', '_click1']
+
 @loop.event(keys)
 def when_btn_was_clicked(*args):
     print('Just a normal event')

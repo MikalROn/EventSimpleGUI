@@ -11,7 +11,7 @@ class Test:
 
         @loop.event('test')
         def event_test(*args):
-            pass
+            """ Just a test event """
         assert event_test in loop.get_events
 
     def test_if_simulated_win_return_event_values_and_close(self):
@@ -41,7 +41,7 @@ class Test:
         loop = EventSimpleGUI()
 
         def event_test(*args):
-            ...
+            """ Just a test event """
         loop.add_event(event_test)
         assert event_test in loop.get_events
 
