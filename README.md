@@ -17,10 +17,10 @@ Using the decorator event to run an event, you can pass the element key as an ar
 from pysimpleevent import EventSimpleGUI
 import PySimpleGUI as sg
 
-app = EventSimpleGUI()
+loop = EventSimpleGUI()
 
 
-@app.event('_click')
+@loop.event('_click')
 def when_btn_was_clicked(event: str, values: dict, window: sg.Window):
     print('Just a normal event')
 
@@ -28,15 +28,14 @@ layout = [[sg.B('Just a button', key='_click')]]
 window = sg.Window('Just a Window.', layout)
 
 if __name__ == '__main__':
-    app.run_window(window)
+    loop.run_window(window)
 ````
 Events can be passed as an argument of run window like in the exemple
-
 ````python
 from pysimpleevent import EventSimpleGUI
 import PySimpleGUI as sg
 
-app = EventSimpleGUI()
+loop = EventSimpleGUI()
 
 
 
@@ -48,14 +47,14 @@ layout = [[sg.B('Just a button', key='_click')]]
 window = sg.Window('Just a Window.', layout)
 
 if __name__ == '__main__':
-    app.run_window(window, when_btn_was_clicked)
+    loop.run_window(window, when_btn_was_clicked)
 ````
 And can also pass an event using add_event
 ````python
 from pysimpleevent import EventSimpleGUI
 import PySimpleGUI as sg
 
-app = EventSimpleGUI()
+loop = EventSimpleGUI()
 
 
 
@@ -63,11 +62,11 @@ def when_btn_was_clicked(event: str, values: dict, window: sg.Window):
     if event == '_click':
         print('Just a normal event')
 
-app.add_event(when_btn_was_clicked)
+loop.add_event(when_btn_was_clicked)
 layout = [[sg.B('Just a button', key='_click')]]
 window = sg.Window('Just a Window.', layout)
 
 if __name__ == '__main__':
-    app.run_window(window)
+    loop.run_window(window)
 ````
 

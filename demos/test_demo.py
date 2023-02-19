@@ -2,7 +2,7 @@ from demos.demo1 import when_btn_was_clicked, window
 from pysimpleevent import EventSimpleGUI
 
 
-test_app = EventSimpleGUI() # Without events
+test_loop = EventSimpleGUI() # Without events
 
 class Test:
 

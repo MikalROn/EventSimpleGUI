@@ -7,7 +7,7 @@ with open('README.md', 'rt') as arq:
 keywords = ['EventSimpleGUI', 'simplegui', 'GUI', 'gui', 'events for simplegui']
 
 setup(name='EventSimpleGUI',
-      version='0.2.1',
+      version='0.2.4',
       license='MIT license',
       author='Daniel Coêlho',
       long_description=readme,

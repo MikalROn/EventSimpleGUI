@@ -1,7 +1,7 @@
 from pysimpleevent import EventSimpleGUI
 import PySimpleGUI as sg
 
-app = EventSimpleGUI()
+loop = EventSimpleGUI()
 
 
 
@@ -13,4 +13,4 @@ layout = [[sg.B('Just a button', key='_click')]]
 window = sg.Window('Just a Window.', layout)
 
 if __name__ == '__main__':
-    app.run_window(window, when_btn_was_clicked)
+    loop.run_window( window, when_btn_was_clicked )

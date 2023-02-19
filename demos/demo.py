@@ -3,10 +3,10 @@ from pysimpleevent import EventSimpleGUI
 import re
 
 
-app = EventSimpleGUI()
+loop = EventSimpleGUI()
 
 
-@app.event('_NOME')
+@loop.event( '_NOME' )
 def verificar_nome(event, values, window):
     element = window.find_element('_NOME_ERRO')
     if len(values[event]) > 20:
@@ -15,7 +15,7 @@ def verificar_nome(event, values, window):
         element.update('✔')
 
 
-@app.event('_EMAIL')
+@loop.event( '_EMAIL' )
 def verifica_email(event: str, values, window: sg.Window):
     elememt = window.find_element('_EMAIL_ERRO')
     re_email = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
@@ -25,7 +25,7 @@ def verifica_email(event: str, values, window: sg.Window):
         elememt.update('Email invalido')
 
 
-@app.event('_SENHA')
+@loop.event( '_SENHA' )
 def enviar_informacao(event, values, window):
     senha = values[event]
     element = window.find_element('_SENHA_ERRO')
@@ -57,4 +57,4 @@ layout = [
 window = sg.Window('Janela', layout, resizable=True, scaling=2)
 
 if __name__ == '__main__':
-    app.run_window(window)
+    loop.run_window( window )

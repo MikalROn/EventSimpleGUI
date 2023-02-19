@@ -12,7 +12,7 @@ def get_cep_api(cep: str) -> dict:
         raise ValueError(r.status_code, r.text)
 
 
-app = EventSimpleGUI()
+loop = EventSimpleGUI()
 
 lay = [
     [sg.Frame(
@@ -29,7 +29,7 @@ lay = [
 ]
 win = sg.Window('Info cep', lay)
 
-@app.event('Buscar')
+@loop.event( 'Buscar' )
 def event_buscar(event, values, window: sg.Window):
     def cria_lay_com_dicio(dicionario: dict) -> list:
         return [
@@ -52,4 +52,4 @@ def event_buscar(event, values, window: sg.Window):
 
 
 if __name__ == '__main__':
-    app.run_window(win, debug=True)
+    loop.run_window( win, debug=True )
