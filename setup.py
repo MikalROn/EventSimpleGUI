@@ -10,7 +10,7 @@ keywords = [
 ]
 
 setup(name='EventSimpleGUI',
-      version='0.2.7',
+      version='0.2.8',
       license='MIT license',
       author='Daniel Coêlho',
       long_description=readme,
