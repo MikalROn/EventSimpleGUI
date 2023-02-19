@@ -1,4 +1,4 @@
-
+import PySimpleGUI as sg
 class WinSimulator:
     """ This class can simulates a win """
     def __init__(self, event: str, values: dict):
@@ -11,6 +11,5 @@ class WinSimulator:
     def Read(self) -> tuple[str, dict]:
         return self._event, self._values
 
-    @staticmethod
-    def close():
-        """ Test event to avoid errors """
+    def close(self):
+        self._event = sg.WIN_CLOSED
