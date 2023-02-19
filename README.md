@@ -113,4 +113,9 @@ if __name__ == '__main__':
     loop.run_window(window, window_log=True)
 ````
 
+###  Change log 0.2.5
+
+- Now events can return values on Values dict
+
+
 
