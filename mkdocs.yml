@@ -1,4 +1,7 @@
 site_name: EventSimpleGUI
+site_author: Daniel Coêlho
+repo_url: https://github.com/MikalROn/EventSimpleGUI
+
 theme:
     name: windmill-dark
     locale: en
