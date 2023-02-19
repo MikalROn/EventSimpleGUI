@@ -1,8 +1,17 @@
 # Events For SimpleGui
 
 > Status of project: in progress...
+> 
+<p align="center">
 
-This project has the intention to make easier, scalable and readable events on PySimpleGUI
+![GitHub](https://img.shields.io/github/languages/code-size/MikalROn/EventSimpleGUI?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/MikalROn/EventSimpleGUI?style=for-the-badge)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/eventsimplegui?style=for-the-badge)
+
+</p>
+
+<em>This project has the intention to make easier, scalable and readable events on PySimpleGUI</em>
+
 ## Download
 ````shell
 $pip install EventSimpleGUI
