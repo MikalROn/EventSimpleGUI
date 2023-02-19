@@ -13,4 +13,4 @@ class WinSimulator:
 
     @staticmethod
     def close():
-        return None
+        """ Test event to avoid errors """
