@@ -1,8 +1,8 @@
 from setuptools import setup
 
-
 with open('README.md', 'rt') as arq:
       readme = arq.read()
+
 
 keywords = [
       'EventSimpleGUI'.lower(), 'EventSimpleGUI', 'simplegui', 'GUI', 'gui', 'events for simplegui',
@@ -11,7 +11,7 @@ keywords = [
 
 setup(name='EventSimpleGUI',
       url='https://github.com/MikalROn/EventSimpleGUI',
-      version='0.2.8',
+      version='0.2.9',
       license='MIT license',
       author='Daniel Coêlho',
       long_description=readme,
@@ -26,6 +26,6 @@ setup(name='EventSimpleGUI',
             'Tests': 'https://smokeshow.helpmanual.io/474z2x1c0s2u3j101i26/',
             'Source': 'https://github.com/MikalROn/EventSimpleGU',
             'Demos': 'https://github.com/MikalROn/EventSimpleGUI/tree/main/demos',
-            'Docs': ''
+            'Docs': 'https://mikalron.github.io/EventSimpleGUI/'
       }
 )

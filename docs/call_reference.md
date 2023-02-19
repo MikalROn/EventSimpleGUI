@@ -40,7 +40,6 @@ loop.get_events
 <tr> <th> params </th> <th> resume </th>
 
 </tr>
-
       <tr>
         <td><b>Window</b></td>
         <td>can be any PySimpleGUI Window</td> 
@@ -55,7 +54,7 @@ loop.get_events
         <td>if True return values of window.read()</td>
         </tr><tr>
         <td><b>task</b></td>
-        <td>can be any calable function</td>
+        <td>can be any callable  function</td>
         </tr><tr>
         <td><b>close event</b></td>
         <td>a diferent key to close the window</td>
@@ -63,7 +62,6 @@ loop.get_events
         <td><b>return</b></td>
         <td>dict of values or None</td>
         </tr>
-      
 </table>
 
 <h6><b>Exemple: </b></h6>

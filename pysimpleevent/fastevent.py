@@ -30,7 +30,7 @@ class EventSimpleGUI:
         :type window_log:      bool
         :param return_values:  if True return values of window.read()
         :type return_values:   bool
-        :param task:           can be any calable function
+        :param task:           can be any callable function
         :param close_event:    a diferent key to close the window
         """
         while True:
