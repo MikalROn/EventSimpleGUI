@@ -41,9 +41,6 @@ class EventSimpleGUI:
             if task:
                 task()
 
-            # return window on the values
-            values['Window'] = Window
-
             # Run decorator events
             for func in self._events:
                 func(event, values, Window)
@@ -61,10 +58,14 @@ class EventSimpleGUI:
             if event == sg.WIN_CLOSED or event == close_event:
                 break
 
+            # return window on the values
+            values['Window'] = Window
+
         # Return values of window.read()
+        Window.close()
+
         if return_values:
             return values
-        Window.close()
 
     def event(self, key: str or list[str]):
         """ Use this decorator to create events.
