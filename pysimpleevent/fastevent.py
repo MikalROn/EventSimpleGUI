@@ -90,7 +90,7 @@ class EventSimpleGUI:
 
                 elif type(key) == str:
                     if event == key:
-                        values[func_event.__name__] = func_event( event, values, window )
+                        values[func_event.__name__] = func_event(event, values, window)
                         return values[func_event.__name__]
             self.add_event(empacotador)
             return empacotador

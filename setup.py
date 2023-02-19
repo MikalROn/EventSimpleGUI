@@ -1,5 +1,5 @@
 from setuptools import setup
-import os
+
 
 with open('README.md', 'rt') as arq:
       readme = arq.read()
@@ -10,6 +10,7 @@ keywords = [
 ]
 
 setup(name='EventSimpleGUI',
+      url='https://github.com/MikalROn/EventSimpleGUI',
       version='0.2.8',
       license='MIT license',
       author='Daniel Coêlho',
@@ -19,5 +20,6 @@ setup(name='EventSimpleGUI',
       keywords=keywords,
       description='A simple tool to create events to PySimpleGUI',
       packages=['pysimpleevent'],
-      install_requires=['PySimpleGUI']
+      install_requires=['PySimpleGUI'],
+      python_requires='>=3'
 )
