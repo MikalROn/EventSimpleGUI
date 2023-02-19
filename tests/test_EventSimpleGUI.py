@@ -84,6 +84,29 @@ class Test:
 
         console_output = string_io.getvalue().strip()
         sys.stdout = sys.__stdout__
-        log = 'Event ->   test\n' + "Values ->  {'Window': " + str(win) + "}"
+        log = 'Event ->   test\nValues ->  {}'
 
         assert console_output == log
+
+    def test_if_win_can_return_values(self):
+        loop = EventSimpleGUI()
+        win = WinSimulator(event='test', values={})
+
+        result = loop.run_window(win, return_values=True, close_event='test')
+
+        assert result == {}
+
+    def test_closing_window_insede_a_event_and_if_loop_can_return_a_window(self):
+        loop = EventSimpleGUI()
+        win = WinSimulator(event='test', values={})
+
+        @loop.event('test')
+        def close_event(event, values: dict, window):
+            if values:
+                window.close()
+
+        result = loop.run_window(win, return_values=True)
+        assert result == {'close_event': None, 'Window': win}
+
+
+
