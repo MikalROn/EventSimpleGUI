@@ -69,7 +69,7 @@ class EventSimpleGUI:
 
     def event(self, key: str or list[str]):
         """ Use this decorator to create events.
-        ::param key:     element key or keys
+        ::param key:     element key or list of element keys
         ::type key:      str or list[str]
 
         Exemple of a simple event:
