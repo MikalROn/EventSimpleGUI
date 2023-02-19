@@ -5,7 +5,7 @@ class WinSimulator:
         self._event = event
         self._values = values
 
-    def read(self):
+    def Read(self):
         return self._event, self._values
 
     @staticmethod
