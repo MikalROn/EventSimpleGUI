@@ -2,14 +2,14 @@
 
 > Status of project: in progress...
 
-<div align="center" onclick="location.href='https://github.com/MikalROn/EventSimpleGUI'">
+<p align="center" onclick="location.href='https://github.com/MikalROn/EventSimpleGUI'">
 
 ![GitHub](https://img.shields.io/github/languages/code-size/MikalROn/EventSimpleGUI?style=for-the-badge)
 ![GitHub](https://img.shields.io/github/license/MikalROn/EventSimpleGUI?style=for-the-badge)
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/eventsimplegui?style=for-the-badge)
 ![GitHub](https://img.shields.io/badge/Github-Open%20source-green?style=for-the-badge&logo=github)
 
-</div>
+</p>
 
 <em>This project has the intention to make easier, scalable and readable events on PySimpleGUI</em>
 
