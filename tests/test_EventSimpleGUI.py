@@ -1,6 +1,6 @@
 import sys
 from tests.windom_sim import WinSimulator
-from pysimpleevent.fastevent import EventSimpleGUI
+from pysimpleevent import EventSimpleGUI
 from io import StringIO
 
 
@@ -14,7 +14,7 @@ class Test:
             pass
         assert event_test in loop.get_events
 
-    def test_if_simulatedwin_return_event_values_and_close(self):
+    def test_if_simulated_win_return_event_values_and_close(self):
         loop = EventSimpleGUI()
         win = WinSimulator(event='test', values={})
 
@@ -23,6 +23,19 @@ class Test:
             return True
         result = loop.run_window(win, return_values=True, close_event='test')
         assert result['test_event']
+
+    def test_if_simulated_win_return_event_values_and_close_from_lists(self):
+        loop = EventSimpleGUI()
+        win = WinSimulator(event='test1', values={})
+
+        @loop.event(['test1', 'test1'])
+        def test_event_1(*args):
+            return True
+
+        result1 = loop.run_window(win, return_values=True, close_event='test1')
+        win.chage_event('test2')
+        result2 = loop.run_window(win, return_values=True, close_event='test2')
+        assert result1['test_event_1'] and result2['test_event_1']
 
     def test_if_event_go_to_list_of_events_using_add_event(self):
         loop = EventSimpleGUI()
@@ -60,4 +73,17 @@ class Test:
 
         assert console_output == 'test'
 
+    def test_log(self):
+        loop = EventSimpleGUI()
+        win = WinSimulator(event='test', values={})
 
+        string_io = StringIO()
+        sys.stdout = string_io
+
+        loop.run_window(win, close_event='test', window_log=True)
+
+        console_output = string_io.getvalue().strip()
+        sys.stdout = sys.__stdout__
+        log = 'Event ->   test\n' + "Values ->  {'Window': " + str(win) + "}"
+
+        assert console_output == log

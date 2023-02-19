@@ -52,7 +52,7 @@ class EventSimpleGUI:
             for arg in args:
                 arg(event, values, Window)
 
-            # Activate debug
+            # Enable log
             if window_log:
                 print(f'{"Event ->":10}', event)
                 print(f'{"Values ->":10}', values)
