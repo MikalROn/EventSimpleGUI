@@ -8,8 +8,11 @@
 ![GitHub](https://img.shields.io/github/languages/code-size/MikalROn/EventSimpleGUI?style=for-the-badge)
 ![GitHub](https://img.shields.io/github/license/MikalROn/EventSimpleGUI?style=for-the-badge)
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/eventsimplegui?style=for-the-badge)
-<a href="https://github.com/MikalROn/EventSimpleGUI" onclick="location.href='https://github.com/MikalROn/EventSimpleGUI'">
+<a href="https://github.com/MikalROn/EventSimpleGUI">
 <img alt="GitHub" src="https://img.shields.io/badge/Github-Open%20source-green?style=for-the-badge&amp;logo=github"/>
+</a>
+<a href="https://smokeshow.helpmanual.io/474z2x1c0s2u3j101i26/">
+<img alt="Conv100%" src="https://img.shields.io/badge/coverage-100%25-green?style=for-the-badge">
 </a>
 </div>
 
@@ -38,7 +41,7 @@ loop = EventSimpleGUI()
 
 
 @loop.event('_click')
-def when_btn_was_clicked(*args):
+def when_btn_was_clicked(*ags):
     print('Just a normal event')
 
 layout = [[sg.B('Just a button', key='_click')]]
