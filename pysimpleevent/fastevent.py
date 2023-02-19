@@ -41,17 +41,12 @@ class EventSimpleGUI:
             if task:
                 task()
 
-            # Close window
-            if event == sg.WIN_CLOSED or event == close_event:
-                break
-
             # return window on the values
             values['Window'] = Window
 
             # Run decorator events
             for func in self._events:
                 func(event, values, Window)
-
 
             # Run args events or functions
             for arg in args:
@@ -61,6 +56,10 @@ class EventSimpleGUI:
             if window_log:
                 print(f'{"Event ->":10}', event)
                 print(f'{"Values ->":10}', values)
+
+            # Close window
+            if event == sg.WIN_CLOSED or event == close_event:
+                break
 
         # Return values of window.read()
         if return_values:

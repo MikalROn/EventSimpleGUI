@@ -52,4 +52,4 @@ def event_buscar(event, values, window: sg.Window):
 
 
 if __name__ == '__main__':
-    loop.run_window( win, debug=True )
+    loop.run_window( win, window_log=True)

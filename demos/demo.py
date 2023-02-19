@@ -60,4 +60,7 @@ layout = [
 window = sg.Window('Janela', layout, resizable=True, scaling=2)
 
 if __name__ == '__main__':
-    loop.run_window(window)
+    result = loop.run_window(window, close_event='__ENVIAR')
+    print(
+        result
+    )
