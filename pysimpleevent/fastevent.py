@@ -85,13 +85,12 @@ class EventSimpleGUI:
             def empacotador(event: str, values: dict, window: sg.Window):
                 if type(key) == list:
                     if event in key:
-                        values[func_event.__name__] = func_event(event, values, window)
-                        return values[func_event.__name__]
-
+                        window.write_event_value(f'{func_event.__name__}', func_event(event, values, window))
+                        
                 elif type(key) == str:
                     if event == key:
-                        values[func_event.__name__] = func_event(event, values, window)
-                        return values[func_event.__name__]
+                        window.write_event_value(f'{func_event.__name__}', func_event(event, values, window))
+
             self.add_event(empacotador)
             return empacotador
         return decorador

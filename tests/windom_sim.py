@@ -13,3 +13,6 @@ class WinSimulator:
 
     def close(self):
         self._event = sg.WIN_CLOSED
+    
+    def write_event_value(self, key: str, value: any):
+        self._values.update({key: value})
